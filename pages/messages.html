@@ -1,0 +1,13 @@
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Firebase Messenger</h1>
+        <button class="button icon ion-log-out" ng-click="signOut()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="message in messages" ng-click="onPersonClicked(message)">
+                <p>{{message.user}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-pane>

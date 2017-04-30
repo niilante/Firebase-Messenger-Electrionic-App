@@ -1,0 +1,24 @@
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <button class="button icon ion-ios-arrow-back" ui-sref='messages'></button>
+        <h1 class="title">{{info.user}}</h1>
+        <button class="button icon ion-log-out" ng-click="signOut()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="message in messages">
+                <b>{{message.time}}</b>
+                <p>{{message.message}}</p>
+                <span class="item-note"> {{message.action}}</span>
+            </ion-item>
+        </ion-list>
+        <div id='footer' style='position: fixed; display: none;' class="list">
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Message" ng-model="data.model">
+                </label>
+                <button class="button button-small" ng-click="sendMessage()">Send</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-pane>
